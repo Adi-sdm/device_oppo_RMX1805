@@ -117,6 +117,18 @@ ro.qualcomm.bt.hci_transport=smd
 persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aptxadaptive-aac-ldac
 persist.vendor.btstack.enable.splita2dp=true
 
+# PSI
+ro.lmk.use_psi=true
+ro.lmk.swap_util_max=100
+ro.lmk.swap_free_low_percentage=10
+ro.lmk.psi_partial_stall_ms=250
+ro.lmk.psi_complete_stall_ms=700
+ro.lmk.thrashing_limit=40
+ro.lmk.thrashing_limit_decay=60
+
+# QC framework value-adds
+ro.vendor.qti.va_aosp.support=1
+
 # ifdef ODM_WT_EDIT
 # System property for cabl
 # Minglin.Wang@ODM_WT.MM.Display.Lcd.1372106, 2019/01/03,  Modify for disable cabl use cabc
