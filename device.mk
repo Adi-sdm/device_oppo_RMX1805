@@ -27,7 +27,7 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    Snap
+    CameraGo
 
 # Dirac
 $(call inherit-product-if-exists, packages/apps/RealmeDirac/dirac.mk)
