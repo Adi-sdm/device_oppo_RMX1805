@@ -174,7 +174,11 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 PRODUCT_PACKAGES += \
     RemovePackages
 
-# Telephony
+# System
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.binary_xml=false
+
+# Telephony-ext
 PRODUCT_PACKAGES += \
     ims-ext-common \
     ims_ext_common.xml \
