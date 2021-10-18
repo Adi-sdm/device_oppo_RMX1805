@@ -197,8 +197,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libnl
 
-PRODUCT_BOOT_JARS += \
-    WfdCommon
+# PRODUCT_BOOT_JARS += \
+#    WfdCommon
 
 # VNDK
 PRODUCT_PACKAGES += \
@@ -219,3 +219,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/oppo/RMX1805/RMX1805-vendor.mk)
+
+PRODUCT_SOONG_NAMESPACES += \
+    hardware/qcom-caf/msm8996/display \
+    hardware/qcom-caf/msm8996/audio \
+    hardware/qcom-caf/msm8996/media
+
