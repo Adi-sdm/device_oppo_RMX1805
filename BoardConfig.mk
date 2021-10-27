@@ -72,6 +72,9 @@ MAX_EGL_CACHE_SIZE := 2048*1024
 
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
+# Graphics
+BOARD_USES_ADRENO := true
+
 # DRM
 TARGET_ENABLE_MEDIADRM_64 := true
 
