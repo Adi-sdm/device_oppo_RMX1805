@@ -174,6 +174,11 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 PRODUCT_PACKAGES += \
     RemovePackages
 
+# SOC
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.soc.manufacturer=QTI \
+ro.soc.model=MSM8953
+
 # System
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.binary_xml=false
