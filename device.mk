@@ -6,6 +6,7 @@
 
 # Audio
 PRODUCT_PACKAGES += \
+    android.hardware.audio.service \
     audio.a2dp.default \
     tinymix
 
