@@ -9,6 +9,7 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@5.0-impl \
     android.hardware.audio.effect@5.0-impl \
     android.hardware.audio.service \
+    android.hardware.bluetooth.a2dp@1.0 \
     audio.a2dp.default \
     tinymix
 
