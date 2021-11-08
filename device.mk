@@ -17,6 +17,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_policy_configuration.xml:system/etc/audio_policy_configuration.xml
 
+# PRODUCT_SHIPPING_API_LEVEL indicates the first api level, device has been
+# commercially launched on.
+PRODUCT_SHIPPING_API_LEVEL := 27
+
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1520
 TARGET_SCREEN_WIDTH := 720
