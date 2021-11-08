@@ -11,6 +11,7 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.service \
     android.hardware.bluetooth.a2dp@1.0 \
     audio.a2dp.default \
+    android.hardware.soundtrigger@2.1-impl \
     tinymix
 
 PRODUCT_COPY_FILES += \
@@ -24,7 +25,7 @@ TARGET_SCREEN_WIDTH := 720
 PRODUCT_PACKAGES += \
     libldacBT_dec
 
-# Bluetooth 
+# Bluetooth
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/placeholder:system/etc/placeholder \
     $(LOCAL_PATH)/component-overrides.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/component-overrides.xml
@@ -44,6 +45,8 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
     android.hardware.graphics.mapper@2.0-impl \
+    android.hardware.graphics.mapper@3.0-impl \
+    android.hardware.graphics.mapper@4.0-impl \
     gralloc.default \
     libdisplayconfig \
     liboverlay \
@@ -53,6 +56,15 @@ PRODUCT_PACKAGES += \
 # Doze
 PRODUCT_PACKAGES += \
     RealmeParts
+
+# Drm
+PRODUCT_PACKAGES += \
+    android.hardware.drm@1.0-impl \
+    android.hardware.drm@1.0-service
+
+# GPS
+PRODUCT_PACKAGES += \
+  android.hardware.gnss@1.1 \
 
 # Keylayout
 PRODUCT_COPY_FILES += \
@@ -118,6 +130,10 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.RMX1805
 
+# Minijail
+PRODUCT_PACKAGES += \
+    vendor.display.config@2.0
+
 # Net
 PRODUCT_PACKAGES += \
     android.system.net.netd@1.0 \
@@ -141,6 +157,10 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.telephony.gsm.xml \
     frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.sip.voip.xml \
     frameworks/native/data/etc/android.software.vulkan.deqp.level-2020-03-01.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.vulkan.deqp.level.xml
+
+# Power
+PRODUCT_PACKAGES += \
+    android.hardware.power-service-qti \
 
 # Properties
 PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
