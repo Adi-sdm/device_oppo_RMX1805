@@ -24,8 +24,8 @@ DEVICE_PROVISIONED=1
 ro.telephony.default_network=22,20
 
 debug.sf.hw=0
-debug.sf.latch_unsignaled=1
-debug.egl.hw=0
+debug.sf.latch_unsignaled=0
+#debug.egl.hw=0
 persist.hwc.mdpcomp.enable=true
 debug.mdpcomp.logs=0
 dalvik.vm.heapsize=36m
@@ -226,7 +226,7 @@ persist.vendor.camera.display.umax=1920x1080
 persist.vendor.camera.display.lmax=1280x720
 
 #expose aux camera for below packages
-vendor.camera.aux.packagelist=org.codeaurora.snapcam
+#vendor.camera.aux.packagelist=org.codeaurora.snapcam
 
 # Pre-rendering
 ro.vendor.perf.scroll_opt=true
@@ -260,7 +260,7 @@ sys.ipo.disable=1
 
 # Video Acceleration Enabled And HW debugging
 video.accelerate.hw=1
-debug.sf.hw=1
+#debug.sf.hw=1
 debug.performance.tuning=1
 debug.egl.profiler=1 
 debug.egl.hw=1
@@ -286,13 +286,28 @@ ro.zram.mark_idle_delay_mins=60
 ro.zram.first_wb_delay_mins=180
 ro.zram.periodic_wb_delay_hours=24
 
-dalvik.vm.dex2oat64.enabled=true
-ro.vendor.qti.am.reschedule_service=true
-ro.sys.fw.dex2oat_thread_count=8
-dalvik.vm.boot-dex2oat-threads=8
-dalvik.vm.dex2oat-cpu-set=0,1,2,3,4,5,6,7
-dalvik.vm.dex2oat-filter=quicken
-dalvik.vm.dex2oat-threads=8
-dalvik.vm.image-dex2oat-cpu-set=0,1,2,3,4,5,6,7
-dalvik.vm.image-dex2oat-filter=quicken
-dalvik.vm.image-dex2oat-threads=8
+dalvik.vm.dex2oat64.enabled=true 
+ro.vendor.qti.am.reschedule_service=true 
+ro.sys.fw.dex2oat_thread_count=8 
+dalvik.vm.boot-dex2oat-threads=8 
+dalvik.vm.dex2oat-cpu-set=0,1,2,3,4,5,6,7 
+dalvik.vm.dex2oat-filter=quicken 
+dalvik.vm.dex2oat-threads=8 
+dalvik.vm.image-dex2oat-cpu-set=0,1,2,3,4,5,6,7 
+#dalvik.vm.image-dex2oat-filter=quicken 
+dalvik.vm.image-dex2oat-threads=8 
+debug.sf.recomputecrop=0 
+fingerprint.nocleanup=true 
+vendor.display.disable_rotator_downscale=1 
+vendor.display.disable_scaler=0
+debug.hwui.use_buffer_age=false
+
+ro.iorapd.enable=true 
+persist.device_config.runtime_native.usap_pool_enabled=true
+
+ro.soc.manufacturer=Qualcomm
+ro.soc.model=SDM450
+
+fingerprint.nocleanup=true
+
+persist.camera.HAL3.enabled=1

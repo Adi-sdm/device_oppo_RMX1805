@@ -6,8 +6,13 @@
 
 # Audio
 PRODUCT_PACKAGES += \
+    android.hardware.audio.service \
+    android.hardware.audio.effect@5.0-impl \
     audio.a2dp.default \
-    tinymix
+    android.hardware.bluetooth.a2dp@1.0 \
+    android.hardware.soundtrigger@2.1-impl \
+    android.hardware.audio@5.0-impl \
+     tinymix
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_policy_configuration.xml:system/etc/audio_policy_configuration.xml
@@ -25,13 +30,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/placeholder:system/etc/placeholder \
     $(LOCAL_PATH)/component-overrides.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/component-overrides.xml
 
-# Camera
-PRODUCT_PACKAGES += \
-    CameraGo
-
-# Dirac
-$(call inherit-product-if-exists, packages/apps/RealmeDirac/dirac.mk)
-
 # Display
 PRODUCT_PACKAGES += \
     libdisplayconfig \
@@ -40,6 +38,8 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
     android.hardware.graphics.mapper@2.0-impl \
+    android.hardware.graphics.mapper@3.0-impl \
+    android.hardware.graphics.mapper@4.0-impl \
     gralloc.default \
     libdisplayconfig \
     liboverlay \
@@ -47,9 +47,8 @@ PRODUCT_PACKAGES += \
     libtinyxml
 
 # Doze
-PRODUCT_PACKAGES += \
-    RealmeParts \
-    RealmeDirac
+#PRODUCT_PACKAGES += \
+   # RealmeParts
 
 # Keylayout
 PRODUCT_COPY_FILES += \
@@ -67,8 +66,8 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
 # endif
 
 # Trust
-PRODUCT_PACKAGES += \
-    lineage.trust@1.0-service
+#PRODUCT_PACKAGES += \
+ #   lineage.trust@1.0-service
 
 # CNE
 PRODUCT_PACKAGES += \
@@ -97,13 +96,19 @@ PRODUCT_COPY_FILES += \
 # Binder
 PRODUCT_PACKAGES += \
     libhidltransport \
-    libhwbinder
+    libhwbinder \
+    libhidltransport.vendor \
+    libhwbinder.vendor
+
+# Power
+PRODUCT_PACKAGES += \
+    android.hardware.power-service-qti \
+      #android.hardware.power.stats@1.0-service.mock \
+    qti_telephony_utils.xml
 
 # Init
 PRODUCT_PACKAGES += \
-    init.safailnet.rc \
     init.qcom.rc \
-    fstab.qcom \
     init.oppo.rc \
     set_zram.sh
 
@@ -161,6 +166,7 @@ PRODUCT_PACKAGES += \
     qti-telephony-utils \
     qti_telephony_utils.xml
 
+
 # RCS
 PRODUCT_PACKAGES += \
     com.android.ims.rcsmanager \
@@ -174,6 +180,14 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 # Remove unwanted packages
 PRODUCT_PACKAGES += \
     RemovePackages
+
+# Soong namespaces	
+#PRODUCT_SOONG_NAMESPACES += \
+    device/oppo/RMX1805 \
+    hardware/qcom-caf/msm8953/display \
+    hardware/qcom-caf/msm8953/audio \
+    hardware/qcom-caf/msm8953/media \
+    #vendor/qcom/opensource/power
 
 # Telephony
 PRODUCT_PACKAGES += \
@@ -198,25 +212,80 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libnl
 
-PRODUCT_BOOT_JARS += \
-    WfdCommon
+#PRODUCT_BOOT_JARS += \
+    #WfdCommon
 
 # VNDK
 PRODUCT_PACKAGES += \
-    vndk_package
+    vndk_package \
+    libgui_vendor
 
 # VNDK
 PRODUCT_TARGET_VNDK_VERSION := 28
 PRODUCT_EXTRA_VNDK_VERSIONS := 28
 
 # Zygote preforking
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.device_config.runtime_native.usap_pool_enabled=true \
-    persist.device_config.runtime_native.usap_pool_size_max=5
+#PRODUCT_PROPERTY_OVERRIDES += \
+#    persist.device_config.runtime_native.usap_pool_enabled=true \
+ #   persist.device_config.runtime_native.usap_pool_size_max=5
 
 # Charger
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.charger.enable_suspend=true
 
-# Get non-open-source specific aspects
-$(call inherit-product, vendor/oppo/RMX1805/RMX1805-vendor.mk)
+# Gatekeeper
+PRODUCT_PACKAGES += \
+  android.hardware.gatekeeper@1.0.vendor
+
+
+# GPS
+PRODUCT_PACKAGES += \
+  android.hardware.gnss@1.1 \
+  android.hardware.gnss@2.1.vendor \
+  android.hardware.secure_element@1.2.vendor
+
+#keymaster
+PRODUCT_PACKAGES += \
+  android.hardware.keymaster@4.0.vendor
+
+PRODUCT_PACKAGES += \
+  android.system.net.netd@1.1.vendor
+
+# Ne,ural networks
+PRODUCT_PACKAGES += \
+  android.hardware.neuralnetworks@1.3.vendor
+
+PRODUCT_PACKAGES += \
+  android.hardware.radio@1.6.vendor \
+  android.hardware.radio.config@1.3.vendor \
+  android.hardware.radio.deprecated@1.0.vendor \
+  android.hardware.bluetooth@1.0.vendor \
+  android.frameworks.displayservice@1.0.vendor
+
+PRODUCT_PACKAGES += \
+    android.hardware.drm@1.4.vendor \
+    android.hardware.drm@1.0-impl \
+    android.hardware.drm@1.0-service \
+    android.hardware.drm@1.3-service.clearkey \
+    android.hardware.drm@1.0.vendor \
+    android.hardware.drm@1.1.vendor \
+    android.hardware.drm@1.2.vendor \
+    android.hardware.drm@1.3.vendor
+
+# Minijail
+PRODUCT_PACKAGES += \
+    vendor.display.config@2.0 \
+    vendor.display.config@2.0.vendor \
+    libavservices_minijail.vendor \
+    android.hidl.base@1.0_vendor
+
+PRODUCT_SHIPPING_API_LEVEL := 27
+
+$(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.binary_xml=false
+
+PRODUCT_PACKAGES += \
+    android.hardware.atrace@1.0-service
+-include vendor/oppo/RMX1805/BoardConfigVendor.mk

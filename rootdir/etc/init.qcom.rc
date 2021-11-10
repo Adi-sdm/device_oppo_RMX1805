@@ -1,11 +1,12 @@
-import /system/etc/init/init.safailnet.rc
-
 on init
     # Bind mount the fstab file with the one in /vendor/etc/
     mount none /system/etc/fstab.qcom /vendor/etc/fstab.qcom bind
     # Bind mount the config file with the one in  /vendor/etc/audio/
     mount none /system/etc/audio_policy_configuration.xml /vendor/etc/audio/audio_policy_configuration.xml bind
     mount none /system/bin/hw/android.hardware.light@2.0-service.RMX1805 /vendor/bin/hw/android.hardware.light@2.0-service bind
+
+    # BPF
+    setprop ro.kernel.ebpf.supported true
 
 on post-fs
     mount none /system/etc/WCNSS_qcom_cfg.ini /vendor/etc/wifi/WCNSS_qcom_cfg.ini bind
