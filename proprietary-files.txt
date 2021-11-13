@@ -109,6 +109,7 @@ lib64/libdpmctmgr.so
 lib64/libdpmfdmgr.so
 lib64/libdpmtcm.so
 lib64/libfm-hci.so
+lib64/libbinder.so
 lib64/liblocationservice_jni.so
 lib64/libmmosal.so
 lib64/libmmparser_lite.so
