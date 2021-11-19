@@ -75,6 +75,10 @@ audio.offload.min.duration.secs=30
 #enable offload audio video playback by default
 audio.offload.video=true
 
+# IORap app launch prefetching using Perfetto traces and madvise
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.iorapd.enable=true
+
 #enable music through deep buffer
 audio.deep_buffer.media=true
 
