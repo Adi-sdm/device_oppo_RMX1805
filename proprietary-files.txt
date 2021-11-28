@@ -153,5 +153,5 @@ product/lib64/lib-imsvtutils.so|8e9bba6bbad8e8e5d3cfa40831262db5c745e073
 -product/priv-app/ims/ims.apk|9c4ca91e0ec7a567d22251d7ca0640abf13fdd7b
 
 # audio
-#lib64/libaudiopolicymanagerdefault.so
+lib64/libaudiopolicymanagerdefault.so
 lib64/libbinder.so
