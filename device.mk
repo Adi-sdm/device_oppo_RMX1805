@@ -176,6 +176,15 @@ PRODUCT_PACKAGES += \
     RemovePackages
 
 # Telephony
+# USB
+PRODUCT_PACKAGES += \
+    android.hardware.usb@1.0-service.RMX2020
+
+# Vendor Override
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/vendor_override_manifest.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_EXTRA_VNDK_VERSIONS)/etc/vintf/manifest/vendor_override_manifest.xml
+
+# Wi-Fi
 PRODUCT_PACKAGES += \
     ims-ext-common \
     ims_ext_common.xml \

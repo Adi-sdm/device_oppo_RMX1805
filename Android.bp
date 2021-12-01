@@ -1,3 +1,8 @@
 subdirs = [
     "light",
-]
+
+soong_namespace {
+}
+
+subdirs = [
+    "usb",
