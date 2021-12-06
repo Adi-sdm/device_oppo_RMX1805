@@ -46,3 +46,19 @@ service ktweak /vendor/bin/sh /system/etc/init/ktweak.sh
 on property:sys.boot_completed=1
     start set_zram
     start ktweak
+
+on property:persist.sys.device_provisioned=1
+    setprop dalvik.vm.dex2oat-cpu-set 0,1,2,3,6,7
+    setprop dalvik.vm.dex2oat-threads 6
+
+on property:init.svc.cnss_diag=running
+    stop cnss_diag
+
+on property:init.svc.tcpdump=running
+    stop tcpdump
+
+on property:init.svc.vendor.ipacm-diag=running
+    stop vendor.ipacm-diag
+
+on property:dev.bootcomplete=1
+    restart ril-daemon
