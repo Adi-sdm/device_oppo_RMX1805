@@ -1,0 +1,10 @@
+#
+# product.prop for RMX1805
+#
+
+# PixelPlusUI OFFICIAL
+ro.ppui.device_name=Realme 2
+ro.ppui.version=3.11
+ro.ppui.version_code=Ignite
+ro.ppui.is_official=true
+ro.ppui.maintainer_name=Adi
