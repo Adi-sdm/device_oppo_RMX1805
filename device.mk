@@ -130,6 +130,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     SystemUI
 
+# Sensors
+PRODUCT_PACKAGES += \
+    android.frameworks.sensorservice@1.0 \
+    android.hardware.sensors@1.0-impl \
+    android.hardware.sensors@1.0-service \
+    libsensorndkbridge    
+
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.RMX1805
@@ -160,7 +167,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.cdma.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.telephony.cdma.xml \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.telephony.gsm.xml \
     frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.sip.voip.xml \
-    frameworks/native/data/etc/android.software.vulkan.deqp.level-2020-03-01.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.vulkan.deqp.level.xml
+    frameworks/native/data/etc/android.software.vulkan.deqp.level-2020-03-01.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.vulkan.deqp.level.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video.xml
