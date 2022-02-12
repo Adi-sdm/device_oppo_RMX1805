@@ -48,7 +48,6 @@ PRODUCT_PACKAGES += \
 
 # Doze
 PRODUCT_PACKAGES += \
-    RealmeParts \
     RealmeDirac
 
 # Keylayout
