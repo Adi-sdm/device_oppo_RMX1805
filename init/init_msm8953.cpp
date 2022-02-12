@@ -113,6 +113,6 @@ void vendor_load_properties()
     property_override("dalvik.vm.heapmaxfree", heapmaxfree);
 
     // fingerprint
-    property_override("ro.build.description", "redfin-user 11 RQ3A.21101.001.A1 7641976 release-keys");
-    property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "google/redfin/redfin:11/RQ3A.21101.001.A1/7641976:user/release-keys");
+    property_override("ro.build.description", "oriole-user 12 SQ1D.220205.003 8069835 release-keys");
+    property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "google/oriole/oriole:12/SQ1D.220205.003/8069835:user/release-keys");
 }
