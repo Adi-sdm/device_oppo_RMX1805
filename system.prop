@@ -37,7 +37,13 @@ debug.sf.recomputecrop=0
 
 #Prop to chnage screen density
 ro.sf.lcd_density=360
-
+# LMKD
+PRODUCT_PRODUCT_PROPERTIES += \
+ro.lmk.critical_upgrade=true \ 
+ro.lmk.upgrade_pressure=40 \
+ro.lmk.downgrade_pressure=60 \ 
+ro.lmk.thrashing_limit=30 \ 
+ro.lmk.thrashing_limit_decay=50
 # IMS
 persist.dbg.volte_avail_ovr=1
 persist.dbg.vt_avail_ovr=1
